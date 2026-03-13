@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sudipta Ghosh — Frontend Developer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Fonts: Cormorant Garamond (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <!-- Boxicons for icons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ========== NOISE OVERLAY ========== -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- ========== CURSOR ========== -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" id="cursorFollower" aria-hidden="true"></div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Home">
+        <span class="logo-bracket">[</span>SG<span class="logo-bracket">]</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#certificates" class="nav-link">Certificates</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode" title="Toggle theme">
+          <i class='bx bx-moon' id="themeIcon"></i>
+        </button>
+        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero" aria-label="Introduction">
+    <!-- Animated background shapes -->
+    <div class="hero-bg" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="grid-lines"></div>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal-up" aria-hidden="true">&#x2014; Welcome to my portfolio</p>
+      <h1 class="hero-name reveal-up" style="--delay:.1s">
+        Sudipta<br /><em>Ghosh</em>
+      </h1>
+      <div class="hero-role reveal-up" style="--delay:.2s" aria-label="Role">
+        <span class="role-prefix">I'm a </span>
+        <span class="typed-text" id="typedText" aria-live="polite"></span>
+        <span class="typed-cursor" aria-hidden="true">|</span>
+      </div>
+      <p class="hero-sub reveal-up" style="--delay:.3s">
+        B.Tech CSE (AI &amp; ML) · Brainware University
+      </p>
+      <div class="hero-cta reveal-up" style="--delay:.4s">
+        <a href="#projects" class="btn btn-primary">
+          <span>View Portfolio</span>
+          <i class='bx bx-arrow-back bx-rotate-180'></i>
+        </a>
+        <a href="#contact" class="btn btn-ghost">
+          <span>Contact Me</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-indicator" aria-hidden="true">
+      <div class="scroll-line"></div>
+      <span>scroll</span>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section about" id="about" aria-label="About me">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">01 / about</span>
+        <h2 class="section-title">Crafting Interfaces,<br /><em>Learning Every Day</em></h2>
+      </div>
+
+      <div class="about-grid">
+        <!-- Left: Photo -->
+        <div class="about-photo-wrap reveal-left">
+          <div class="photo-frame">
+            <div class="photo-placeholder" aria-label="Portrait of Sudipta Ghosh">
+              <div class="photo-initials">SG</div>
+              <div class="photo-ring ring-1"></div>
+              <div class="photo-ring ring-2"></div>
+            </div>
+            <div class="photo-badge">
+              <i class='bx bx-code-alt'></i>
+              <span>Frontend Dev</span>
+            </div>
+          </div>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-num">3+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">5+</span>
+              <span class="stat-label">Skills</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">2+</span>
+              <span class="stat-label">Certificates</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Bio -->
+        <div class="about-bio reveal-right">
+          <h3 class="bio-greeting">Hello, I'm Sudipta 👋</h3>
+          <p class="bio-text">
+            I'm a passionate <strong>Frontend Developer</strong> and 
+            <strong>B.Tech CSE (AI &amp; ML)</strong> student at 
+            <strong>Brainware University</strong>. My journey into tech began 
+            with a fascination for how beautiful, functional interfaces can 
+            transform user experience.
+          </p>
+          <p class="bio-text">
+            I specialise in crafting responsive, accessible web interfaces 
+            using <strong>HTML, CSS, and JavaScript</strong>. I believe great 
+            design and clean code are two sides of the same coin — and I pursue 
+            both relentlessly.
+          </p>
+          <p class="bio-text">
+            When I'm not coding, I explore the intersection of 
+            <strong>AI/ML and the web</strong> — experimenting with how 
+            intelligent systems can enhance modern front-end experiences.
+          </p>
+          <div class="bio-chips">
+            <span class="chip">HTML5</span>
+            <span class="chip">CSS3</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">AI & ML</span>
+            <span class="chip">UI Design</span>
+          </div>
+          <a href="#contact" class="btn btn-primary mt-lg">
+            <span>Let's Connect</span>
+            <i class='bx bx-link-external'></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section class="section skills" id="skills" aria-label="Skills">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">02 / skills</span>
+        <h2 class="section-title">Tools &amp; <em>Technologies</em></h2>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Frontend -->
+        <div class="skill-group reveal-up" style="--delay:.0s">
+          <h3 class="skill-group-label">Frontend</h3>
+          <div class="skill-cards">
+
+            <div class="skill-card">
+              <div class="skill-icon html-icon"><i class='bx bxl-html5'></i></div>
+              <span class="skill-name">HTML5</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:90%"></div></div>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-icon css-icon"><i class='bx bxl-css3'></i></div>
+              <span class="skill-name">CSS3</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-icon js-icon"><i class='bx bxl-javascript'></i></div>
+              <span class="skill-name">JavaScript</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Other Skills -->
+        <div class="skill-group reveal-up" style="--delay:.15s">
+          <h3 class="skill-group-label">Other Skills</h3>
+          <div class="skill-cards">
+
+            <div class="skill-card">
+              <div class="skill-icon git-icon"><i class='bx bxl-git'></i></div>
+              <span class="skill-name">Git</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:70%"></div></div>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-icon react-icon"><i class='bx bxl-react'></i></div>
+              <span class="skill-name">Basic React</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:55%"></div></div>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-icon ps-icon"><i class='bx bx-brain'></i></div>
+              <span class="skill-name">Problem Solving</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="section projects" id="projects" aria-label="Projects">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">03 / projects</span>
+        <h2 class="section-title">Selected <em>Work</em></h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <article class="project-card reveal-up" style="--delay:.0s">
+          <div class="project-img">
+            <div class="project-img-placeholder" data-color="#1a2744">
+              <i class='bx bx-task'></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link-icon" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+              <a href="#" class="project-link-icon" aria-label="Live Demo"><i class='bx bx-link-external'></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-number">01</span>
+            <h3 class="project-title">TaskFlow App</h3>
+            <p class="project-desc">A productivity task manager with drag-and-drop functionality, local storage persistence, and a sleek dark UI.</p>
+            <div class="project-stack">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-sm btn-ghost"><i class='bx bxl-github'></i> GitHub</a>
+              <a href="#" class="btn btn-sm btn-primary"><i class='bx bx-link-external'></i> Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card reveal-up" style="--delay:.1s">
+          <div class="project-img">
+            <div class="project-img-placeholder" data-color="#1e2a1a">
+              <i class='bx bx-cloud-rain'></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link-icon" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+              <a href="#" class="project-link-icon" aria-label="Live Demo"><i class='bx bx-link-external'></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-number">02</span>
+            <h3 class="project-title">WeatherScope</h3>
+            <p class="project-desc">Real-time weather dashboard consuming OpenWeatherMap API. Displays forecasts, humidity, UV index with animated icons.</p>
+            <div class="project-stack">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS API</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-sm btn-ghost"><i class='bx bxl-github'></i> GitHub</a>
+              <a href="#" class="btn btn-sm btn-primary"><i class='bx bx-link-external'></i> Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card reveal-up" style="--delay:.2s">
+          <div class="project-img">
+            <div class="project-img-placeholder" data-color="#2a1a2e">
+              <i class='bx bx-bot'></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link-icon" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+              <a href="#" class="project-link-icon" aria-label="Live Demo"><i class='bx bx-link-external'></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-number">03</span>
+            <h3 class="project-title">AI Chat Interface</h3>
+            <p class="project-desc">A conversational UI prototype inspired by modern AI assistants. Features message streaming simulation and responsive layout.</p>
+            <div class="project-stack">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-sm btn-ghost"><i class='bx bxl-github'></i> GitHub</a>
+              <a href="#" class="btn btn-sm btn-primary"><i class='bx bx-link-external'></i> Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card reveal-up" style="--delay:.3s">
+          <div class="project-img">
+            <div class="project-img-placeholder" data-color="#1a2520">
+              <i class='bx bx-store'></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link-icon" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+              <a href="#" class="project-link-icon" aria-label="Live Demo"><i class='bx bx-link-external'></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-number">04</span>
+            <h3 class="project-title">ShopUI Concept</h3>
+            <p class="project-desc">E-commerce landing page concept with product filtering, cart animation, and smooth micro-interactions throughout.</p>
+            <div class="project-stack">
+              <span class="tag">HTML</span><span class="tag">CSS Grid</span><span class="tag">JS</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-sm btn-ghost"><i class='bx bxl-github'></i> GitHub</a>
+              <a href="#" class="btn btn-sm btn-primary"><i class='bx bx-link-external'></i> Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CERTIFICATES ========== -->
+  <section class="section certificates" id="certificates" aria-label="Certificates">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">04 / certificates</span>
+        <h2 class="section-title">Earned <em>Credentials</em></h2>
+      </div>
+
+      <div class="certs-grid">
+
+        <div class="cert-card reveal-up" style="--delay:.0s">
+          <div class="cert-icon"><i class='bx bxl-html5'></i></div>
+          <div class="cert-body">
+            <h3 class="cert-title">Responsive Web Design</h3>
+            <p class="cert-org">freeCodeCamp</p>
+            <p class="cert-date"><i class='bx bx-calendar'></i> 2023</p>
+          </div>
+          <a href="#" class="btn btn-sm btn-ghost cert-btn">
+            <i class='bx bx-link-external'></i> View
+          </a>
+        </div>
+
+        <div class="cert-card reveal-up" style="--delay:.1s">
+          <div class="cert-icon js-icon"><i class='bx bxl-javascript'></i></div>
+          <div class="cert-body">
+            <h3 class="cert-title">JavaScript Algorithms &amp; Data Structures</h3>
+            <p class="cert-org">freeCodeCamp</p>
+            <p class="cert-date"><i class='bx bx-calendar'></i> 2023</p>
+          </div>
+          <a href="#" class="btn btn-sm btn-ghost cert-btn">
+            <i class='bx bx-link-external'></i> View
+          </a>
+        </div>
+
+        <div class="cert-card reveal-up" style="--delay:.2s">
+          <div class="cert-icon react-icon"><i class='bx bxl-react'></i></div>
+          <div class="cert-body">
+            <h3 class="cert-title">Introduction to React</h3>
+            <p class="cert-org">Coursera</p>
+            <p class="cert-date"><i class='bx bx-calendar'></i> 2024</p>
+          </div>
+          <a href="#" class="btn btn-sm btn-ghost cert-btn">
+            <i class='bx bx-link-external'></i> View
+          </a>
+        </div>
+
+        <div class="cert-card reveal-up" style="--delay:.3s">
+          <div class="cert-icon ai-icon"><i class='bx bx-brain'></i></div>
+          <div class="cert-body">
+            <h3 class="cert-title">AI For Everyone</h3>
+            <p class="cert-org">DeepLearning.AI · Coursera</p>
+            <p class="cert-date"><i class='bx bx-calendar'></i> 2024</p>
+          </div>
+          <a href="#" class="btn btn-sm btn-ghost cert-btn">
+            <i class='bx bx-link-external'></i> View
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section contact" id="contact" aria-label="Contact">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">05 / contact</span>
+        <h2 class="section-title">Get In <em>Touch</em></h2>
+        <p class="section-sub">Have a project in mind or just want to say hello? I'd love to hear from you.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Form -->
+        <div class="contact-form-wrap reveal-left">
+          <form class="contact-form" id="contactForm" novalidate aria-label="Contact form">
+
+            <div class="form-group">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="Your full name" autocomplete="name" />
+              <span class="form-error" id="nameError" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" autocomplete="email" />
+              <span class="form-error" id="emailError" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" class="form-input form-textarea" placeholder="Tell me about your project…" rows="5"></textarea>
+              <span class="form-error" id="messageError" role="alert"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+              <span id="submitLabel">Send Message</span>
+              <i class='bx bx-send' id="submitIcon"></i>
+            </button>
+
+            <p class="form-success" id="formSuccess" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <!-- Social Info -->
+        <div class="contact-info reveal-right">
+          <h3 class="contact-info-title">Connect with me</h3>
+          <p class="contact-info-text">
+            I'm currently open to frontend developer opportunities, collaborations, and interesting conversations about tech and design.
+          </p>
+
+          <div class="social-links">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+              <i class='bx bxl-linkedin'></i>
+              <span>linkedin.com/in/sudiptaghosh</span>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+              <i class='bx bxl-github'></i>
+              <span>github.com/sudiptaghosh</span>
+            </a>
+            <a href="mailto:sudipta@example.com" class="social-link" aria-label="Email">
+              <i class='bx bx-envelope'></i>
+              <span>sudipta@example.com</span>
+            </a>
+          </div>
+
+          <div class="availability-badge">
+            <span class="avail-dot"></span>
+            Available for opportunities
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <a href="#hero" class="nav-logo" aria-label="Back to top">
+            <span class="logo-bracket">[</span>SG<span class="logo-bracket">]</span>
+          </a>
+          <p class="footer-tagline">Frontend Developer · AI&ML Student</p>
+        </div>
+
+        <div class="footer-social">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+          <a href="mailto:sudipta@example.com" class="footer-icon" aria-label="Email"><i class='bx bx-envelope'></i></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© <span id="year"></span> Sudipta Ghosh. Crafted with care.</p>
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">
+          <i class='bx bx-up-arrow-alt'></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
